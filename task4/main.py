@@ -7,15 +7,15 @@ Output:
 True
 '''
 
-numbers=[]
-for i in range(int(input("enter no. of values"))):
-    n=int(input("enter value"))
-    numbers.append(n)
-print(numbers)
-if numbers.count(19)==2 and numbers.count(5)>=3:
-    print("True")
-else:
-    print("False")
+# numbers=[]
+# for i in range(int(input("enter no. of values"))):
+#     n=int(input("enter value"))
+#     numbers.append(n)
+# print(numbers)
+# if numbers.count(19)==2 and numbers.count(5)>=3:
+#     print("True")
+# else:
+#     print("False")
 
 '''
 2. Write a Python program to find a pair with highest product from a given array of integers.
@@ -25,25 +25,25 @@ Output: {7,8}
 Input: arr[] = {0, -1, -2, -4, 5, 0, -6}
 Output: {-4, -6}
 '''
-def product_fun():
-    arr= {1, 2, 3, 4, 7, 0, 8, 4}
-    arr=list(arr)
-    l=len(arr)
-    print(arr)
-    products=[]
-    x=arr[0]
-    y=arr[1]
-
-    for i in range(0,l):
-        for j in range(i+1,l):
-            n=arr[i]*arr[j]
-            if n>(x*y):
-                x=arr[i]
-                y=arr[j]
-    return x,y
-
-find=product_fun()
-print(set(find))
+# def product_fun():
+#     arr= {1, 2, 3, 4, 7, 0, 8, 4}
+#     arr=list(arr)
+#     l=len(arr)
+#     print(arr)
+#     products=[]
+#     x=arr[0]
+#     y=arr[1]
+#
+#     for i in range(0,l):
+#         for j in range(i+1,l):
+#             n=arr[i]*arr[j]
+#             if n>(x*y):
+#                 x=arr[i]
+#                 y=arr[j]
+#     return x,y
+#
+# find=product_fun()
+# print(set(find))
 
 '''
 3.Write a Python program that accept a list of integers and check the length and the fifth element.
@@ -56,14 +56,14 @@ Input:
 [19, 15, 5, 7, 5, 5, 2]
 Output:
 '''
-integers=[]
-for i in range(int(input("enter no. of integers"))):
-    integers.append(int(input("enter value")))
-n=integers.count(integers[4])
-if len(integers)==8 and integers.count(integers[4])==3:
-    print("True")
-else:
-    print("False")
+# integers=[]
+# for i in range(int(input("enter no. of integers"))):
+#     integers.append(int(input("enter value")))
+# n=integers.count(integers[4])
+# if len(integers)==8 and integers.count(integers[4])==3:
+#     print("True")
+# else:
+#     print("False")
 
 
 '''
@@ -82,37 +82,37 @@ Example
 Input: [10,12,4,5,9]
 Output:5
 '''
-
-arr=[10,9,8,2,12]
-profit=[]
-l=len(arr)
-for i in range(0,l):
-    for j in range(i+1,l):
-        if arr[j]>arr[i]:
-            p=arr[j]-arr[i]
-            profit.append(p)
-        else:
-            profit.append(-1)
-print(max(profit))
+#
+# arr=[10,9,8,2,12]
+# profit=[]
+# l=len(arr)
+# for i in range(0,l):
+#     for j in range(i+1,l):
+#         if arr[j]>arr[i]:
+#             p=arr[j]-arr[i]
+#             profit.append(p)
+#         else:
+#             profit.append(-1)
+# print(max(profit))
 
 '''python pragram to print all integers within the range 100-200 whose sum of digits is an even number.'''
-sum=0
-for num in range(100,201):
-    number=str(num)
-    sum=(int(number[0])+int(number[1])+int(number[2]))
-    if sum%2==0:
-        print(num)
+# sum=0
+# for num in range(100,201):
+#     number=str(num)
+#     sum=(int(number[0])+int(number[1])+int(number[2]))
+#     if sum%2==0:
+#         print(num)
 
 '''
 program to find the largest number and its position in a list without using built-in functions.
 '''
-list=[3,8,1,7,2,9,5,4]
-largest=list[0]
-for i in range(len(list)):
-    if list[i]>largest:
-        largest=list[i]
-        index=i
-print("The largest element is", largest,"and its position is at", index, "th index")
+# list=[3,8,1,7,2,9,5,4]
+# largest=list[0]
+# for i in range(len(list)):
+#     if list[i]>largest:
+#         largest=list[i]
+#         index=i
+# print("The largest element is", largest,"and its position is at", index, "th index")
 
 '''
 STRING CHALLENGE
@@ -127,17 +127,27 @@ Output:false
 Input: “5788888882339999”
 Output:True
 '''
-strn="62225"
-l=len(strn)
-for i in range(l):
-    print("i loop",i)
-    count=1
-    for j in range(i+1,l):
-        print("j loop",j)
-        if strn[i]!=strn[j]:
-            break
+def stringChallenge(s):
+    l=len(s)
+    for i in range(l):
+        count=1
+        for j in range(i+1,l):
+            if s[i]!=s[j]:
+                break
+            else:
+                count=count+1
+                if count==int(s[i]):
+                    print("pass",count,s[i])
+                    return True
         else:
-            count=count+1
+            return False
+
+str = "6539923335"
+result=stringChallenge(str)
+print(result)
+
+
+
 
 
 
